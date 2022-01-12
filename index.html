@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Ayeshu</title>
+
+    <style type="text/css">
+      @font-face {
+        font-family: digit;
+        src: url("digital-7_mono.ttf") format("truetype");
+      }
+    </style>
+
+    <link href="css/default.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+  </head>
+
+  <body>
+    <div id="mainDiv">
+    <span id="text" ></span>
+      <div id="loveHeart">
+        <canvas id="garden"></canvas>
+        <div id="words">
+          <div id="messages">
+            To the most beautiful girl in the world
+            <div id="elapseClock"></div>
+          </div>
+
+          <div id="loveu">
+            Ayeshu, I Love you forever<br />
+            <div class="signature">- Faisal</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+        let counter = 0;
+    const pdom = document.getElementById("text");
+    const text = [
+      "For",
+      "The",
+      "Most",
+      "Beautiful",
+      "Girl",
+      "In",
+      "The",
+      "World",
+      "Ayeshu Meri Jaan"
+    ];
+    const update = () => {
+      if (counter !== 10) pdom.innerText = text[counter];
+      counter++;
+      if (counter ===10){
+         clearInterval(interval);
+         pdom.style.display='none';
+         setTimeout(function () {
+        startHeartAnimation();
+      }, 3000);
+
+      timeElapse(together);
+      setInterval(function () {
+        timeElapse(together);
+      }, 3000);
+        };
+    };
+    const interval = setInterval(update, 2000);
+      var offsetX = $("#loveHeart").width() / 2;
+      var offsetY = $("#loveHeart").height() / 2 - 55;
+      var together = new Date("November 11, 2021 5:00:00");
+
+
+
+      adjustCodePosition();
+      $("#code").typewriter();
+    </script>
+    <style>
+        #text{
+            width: 100%;
+            min-height: 100vh;
+            color:#e75480;
+            font-size: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+  </body>
+</html>
